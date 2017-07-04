@@ -1,0 +1,11 @@
+upstream project {
+    server 172.28.128.5:5000;
+}
+
+server {
+    listen 80;
+    
+    location / {
+        proxy_pass http://project;
+    }
+}
